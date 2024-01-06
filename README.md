@@ -43,12 +43,30 @@ A game can be created using the `NewGame` function which requires 2 players, a n
 func NewGame(player1 *Player, player2 *Player, numRounds int, rules Rules) *Game
 ```
 
-## Game simulation
+### Create Tournament
 
-After a game is created, use `Play` to run a simulation.
+A tournament can be created using the `NewTournament` function which requires a slice of players, a number of rounds and a ruleset. A tournament is a set of games with exactly one game for each pair of players.
 
 ```go
-func (game *Game) Play()
+func NewGame(players []*Player, numRounds int, rules Rules) *Tournament
+```
+
+## Game simulation
+
+After a game is created, use `Simulate` to run a simulation.
+
+```go
+func (game *Game) Simulate()
+```
+
+Each player's score can be accessed using the public `Score` field.
+
+## Tournament simulation
+
+After a tournament is created, use `Simulate` to run a simulation.
+
+```go
+func (tournament *Tournament) Simulate()
 ```
 
 Each player's score can be accessed using the public `Score` field.
