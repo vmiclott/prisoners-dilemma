@@ -22,3 +22,7 @@ func (player *Player) Choose(opponentsChoices Choices) Choice {
 func (player *Player) AddToScore(score int) {
 	player.Score += score
 }
+
+func (player *Player) ResetChoices() {
+	player.choices = Choices{}
+}
