@@ -17,7 +17,7 @@ func main() {
 		LossGain:          0,
 	}
 	game := game.NewGame(player1, player2, numRounds, rules)
-	game.Play()
+	game.Simulate()
 	fmt.Printf("Player 1 score: %d\n", player1.Score)
 	fmt.Printf("Player 2 score: %d\n", player2.Score)
 }

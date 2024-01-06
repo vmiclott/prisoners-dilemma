@@ -1,12 +1,5 @@
 package game
 
-type Rules struct {
-	BothDefectGain    int
-	BothCooperateGain int
-	WinGain           int
-	LossGain          int
-}
-
 type Game struct {
 	player1   *Player
 	player2   *Player
@@ -23,7 +16,7 @@ func NewGame(player1 *Player, player2 *Player, numRounds int, rules Rules) *Game
 	}
 }
 
-func (game *Game) Play() {
+func (game *Game) Simulate() {
 	for i := 0; i < game.numRounds; i++ {
 		player1Choices := game.player1.choices
 		player2Choices := game.player2.choices
